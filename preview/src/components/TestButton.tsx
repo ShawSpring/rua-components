@@ -1,4 +1,4 @@
-import { Button, ToggleButton, type ButtonProps } from "lai-components/src";
+import { Button, ToggleButton, type ButtonProps } from "rua-components/src";
 import { CompGroup, CompPanel } from "../UI/CompPanel";
 import { useState } from "react";
 

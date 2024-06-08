@@ -1,7 +1,7 @@
 {
-  "name": "lai",
-  "version": "1.0.0",
-  "description": "monorepo for a react component library",
+  "name": "rua-components-monorepo",
+  "version": "0.0.1",
+  "description": "monorepo for a react component library which use tailwindcss and react-aria",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,8 @@
   "author": "ShawSpring <chunlaixiao@163.com>",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
@@ -33,12 +35,12 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.383.0",
+    "react": "^18.2.0",
     "react-aria": "^3.33.1",
     "react-aria-components": "^1.2.1",
+    "react-dom": "^18.2.0",
     "tailwind-merge": "^2.3.0",
     "tailwind-variants": "^0.2.1"
   },

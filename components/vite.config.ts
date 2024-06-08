@@ -10,11 +10,14 @@ import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
 
-//setup refer to https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma
-
+//! demos is for docs, not for build
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
-  plugins: [react(), libInjectCss(), dts({ include: ["src"] })],
+  plugins: [
+    react(),
+    libInjectCss(),
+    dts({ include: ["src"], exclude: ["src/**/demos/*"] }),
+  ],
   build: {
     copyPublicDir: false,
     lib: {
@@ -31,7 +34,7 @@ export default defineConfig(({ command }) => ({
       ],
       input: Object.fromEntries(
         glob
-          .sync("src/**/*.{tsx,ts}", { ignore: ["src/**/*.d.ts"] })
+          .sync("src/**/*.{tsx,ts}", { ignore: ["src/**/demos/*"] })
           .map((file) => [
             // This remove `src/` as well as the file extension from each
             // file, so e.g. src/nested/foo.js becomes nested/foo

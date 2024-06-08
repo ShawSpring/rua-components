@@ -157,6 +157,66 @@ twJoin(cls_base, cls_disabled, cls_interactions);
 
 ---
 
+## build 编译
+
+vite的lib模式默认是全都一股脑打包到一起，js文件进assets，这样对于直接在html中link引入很好，但是我这是个组件库，不是最终产物，需要保持目录结构，支持treeshake, 所有需要特别配置。
+
+### 每个组件单独入口，打包为单独的chunk
+
+参见[rollupOptions.input](https://www.rollupjs.com/configuration-options/#input)
+为组件都作为单独入口，会打包为单独的chunk,这样能保留目录结构，支持treeshake。
+手动配置`input`很麻烦，推荐rollup官方推荐的使用`glob`映射目录结构。
+
+```json
+rollupOptions:{
+   input: Object.fromEntries(
+        glob
+          .sync("src/**/*.{tsx,ts}", { ignore: ["src/**/demos/*"] })
+          .map((file) => [
+            // This remove `src/` as well as the file extension from each
+            // file, so e.g. src/nested/foo.js becomes nested/foo
+            relative("src", file.slice(0, file.length - extname(file).length)),
+            // This expands the relative paths to absolute paths, so e.g.
+            // src/nested/foo becomes /project/src/nested/foo.js
+            fileURLToPath(new URL(file, import.meta.url)),
+          ]),
+      ),
+}
+```
+
+### 保留 import \*.css
+
+// 在打包的js产物中注入css,eg:'import xxx.css' 不用使用者手动引入， 但是需要使用者的构建工具支持
+// 记得在package.json中 sideEffects: ["**/*.css"]，告诉构建工具这些css文件虽然没有使用，但是不能被树摇优化
+vite config中使用插件:
+
+```ts
+import { libInjectCss } from "vite-plugin-lib-inject-css";
+```
+
+### 修改assets产物目录
+
+```json
+rollupOptions:{
+      output: {
+        assetFileNames: (assetInfo) => {
+          // console.log(assetInfo.name);
+          if (assetInfo.name.endsWith(".css")) {
+            return "css/" + assetInfo.name;
+          }
+          return "assets/" + assetInfo.name;
+        }, // css文件会在assets目录中
+      }
+}
+```
+
+<br/> 
+<br/>
+<br/>
+<br/>
+
+---
+
 pickup
 
 ## tailwind knowledge

@@ -1,9 +1,9 @@
 {
-  "name": "lai-components",
+  "name": "rua-components",
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "description": "A react component library",
+  "description": "A react component library which use tailwindcss and react-aria",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
       "import": "./src/index.ts"
     },
     "./plugin": {
-      "default": "./src/utils/laiPlugin.js"
+      "default": "./src/utils/ruaPlugin.js"
     }
   },
   "files": [

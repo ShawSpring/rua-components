@@ -5,7 +5,7 @@
 import from `src` sub route
 
 ```ts
-import { Button } from "lai-components/src";
+import { Button } from "rua-components/src";
 ```
 
 ## requirements
@@ -18,18 +18,18 @@ recommend using [vite](https://vitejs.dev/)
 
 ### tailwindcss
 
-1. content `./node_modules/lai-components/src/**/*.{js,ts,jsx,tsx}`, let tailwindcss handle content of src
+1. content `./node_modules/rua-components/src/**/*.{js,ts,jsx,tsx}`, let tailwindcss handle content of src
 2. set dark mode with `variant`
-3. plugin from `lai-components/plugin`
+3. plugin from `rua-components/plugin`
 
 ```json
-import laiPlugin from 'lai-components/plugin';
+import ruaPlugin from 'rua-components/plugin';
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/lai-components/src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/rua-components/src/**/*.{js,ts,jsx,tsx}',
   ],
     darkMode: [
     "variant",
@@ -50,7 +50,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [laiPlugin()],
+  plugins: [ruaPlugin()],
 };
 
 ```

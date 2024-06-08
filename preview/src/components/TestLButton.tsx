@@ -1,4 +1,4 @@
-import { LButton } from "lai-components/src";
+import { LButton } from "rua-components/src";
 import { CompGroup, CompPanel } from "../UI/CompPanel";
 
 function TestButton() {

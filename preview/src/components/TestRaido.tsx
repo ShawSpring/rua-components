@@ -1,4 +1,4 @@
-import { Radio, RadioGroup } from "lai-components/src";
+import { Radio, RadioGroup } from "rua-components/src";
 import { CompGroup, CompPanel } from "../UI/CompPanel";
 
 function TestRadio() {

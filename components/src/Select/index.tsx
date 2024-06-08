@@ -87,3 +87,5 @@ export function SelectSection<T extends object>(
 ) {
   return <DropdownSection {...props} />;
 }
+
+export { SelectValue };

@@ -1,4 +1,4 @@
-import laiPlugin from "./src/utils/laiPlugin";
+import ruaPlugin from "./src/utils/ruaPlugin";
 import aria from "tailwindcss-react-aria-components";
 import animate from "tailwindcss-animate";
 /** @type {import('tailwindcss').Config} */
@@ -27,6 +27,6 @@ export default {
     preflight: false /* preset comes with `@tailwindcss base` is disabled */,
   },
   // plugin reference: https://react-spectrum.adobe.com/react-aria/styling.html#plugin
-  plugins: [aria, animate, laiPlugin()],
+  plugins: [aria, animate, ruaPlugin()],
 };
 /* type Theme='light'|'dark'|'system'|'corporate'|'cupcake'|'bumblebee'|'wireframe'|'halloween'|'black'|'luxury'|'valentine'|'emerald'|'dracula'|'cmyk'|'cyberpunk'|'retro'|'garden'|'aqua'|'pastel'|'fantasy'|'lofi'|'forest'|'autumn'|'synthwave'|'business'|'acid'|'lemonade'|'night'|'coffee'|'winter'|'dim'|'nord'|'sunset'; */

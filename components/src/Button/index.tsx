@@ -28,6 +28,7 @@ const button = tv({
       success: "bg-success text-success-c",
       warning: "bg-warning text-warning-c",
       error: "bg-error text-error-c",
+      icon: "rounded-badge",
     },
     /**
      * define button border radius

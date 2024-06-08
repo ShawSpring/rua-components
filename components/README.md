@@ -1,16 +1,16 @@
-# lai-components
+# rua-components
 
 a react component library, created on top of [react-aria-components](https://react-spectrum.adobe.com/react-aria/getting-started.html)
 
 ## 💡features
 
-1. 🌓multiple themes (32)
+1. 🌓multiple themes (32) inspired by [daisyUI](https://daisyui.com/docs/themes/)
 2. 😋support tree shaking
 
 ## install
 
 ```bash
-npm install lai-components
+npm install rua-components
 ```
 
 ## requirements
@@ -22,12 +22,12 @@ npm install lai-components
 
 ## Usage
 
-two ways to use lai-components, ts src or js dist
+two ways to use rua-components, ts src or js dist
 
 ### dist
 
 ```ts
-import { Button, Label } from "lai-components";
+import { Button, Label } from "rua-components";
 ```
 
 ### src
@@ -36,7 +36,7 @@ import { Button, Label } from "lai-components";
 > see [preview](preview/README.md)
 
 ```ts
-import { Button, Label } from "lai-components/src";
+import { Button, Label } from "rua-components/src";
 ```
 
 ## Themes
