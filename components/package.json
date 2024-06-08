@@ -1,0 +1,53 @@
+{
+  "name": "lai-components",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A react component library",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./src": {
+      "import": "./src/index.ts"
+    },
+    "./plugin": {
+      "default": "./src/utils/laiPlugin.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "readme.md"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "devDependencies": {
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-lib-inject-css": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=16.x",
+    "pnpm": ">=8.x"
+  },
+  "browserslist": [
+    ">1%",
+    "not IE 11"
+  ],
+  "dependencies": {}
+}

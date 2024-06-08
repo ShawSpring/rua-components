@@ -1,0 +1,22 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./themes.css";
+
+/* Scale up hit targets on high resolution mobile devices. */
+@media (min-resolution: 200dpi) {
+  html {
+    font-size: 18px;
+  }
+
+  .text-sm {
+    /* ensure minimum font size of 16px */
+    font-size: 0.9rem;
+  }
+}
+
+body {
+  @apply bg-base-100 text-base-c;
+  color-scheme: light dark;
+}
