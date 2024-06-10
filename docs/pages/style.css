@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li[role="menuitem"] {
+  padding-inline: 0 !important;
+}
+.vp-local-demo {
+  @apply bg-base-300;
+}
+
+@layer components {
+  .theme-item {
+    @apply size-full border ring-1 bg-base-100 text-base-c rounded-btn text-center;
+  }
+}

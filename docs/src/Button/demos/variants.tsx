@@ -4,7 +4,7 @@
  */
 import { Button, ToggleButton, type ButtonProps } from "rua-components/src";
 import { useState } from "react";
-
+import { type Theme } from "rua-components/src/types/theme.ts";
 export default function () {
   const [isDisabled, setIsDisabled] = useState(false);
   const [shape, setShape] = useState<ButtonProps["shape"]>("round");

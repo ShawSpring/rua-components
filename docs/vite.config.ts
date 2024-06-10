@@ -1,9 +1,13 @@
 import { defineConfig } from "vite";
 import * as path from "path";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
+import nodeResolve from "@rollup/plugin-node-resolve";
 
+// https://vitejs.dev/config/
 export default defineConfig({
+  root: path.resolve(__dirname, "./"),
+  build: {},
   plugins: [
     react(),
     pages({
@@ -75,7 +79,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "my-lib": path.join(__dirname, "../src"),
+      "@components": path.resolve(__dirname, "../components"),
     },
+  },
+  ssr: {
+    noExternal: ["@components"],
   },
 });

@@ -32,8 +32,8 @@ import { Button, Label } from "rua-components";
 
 ### src
 
-> the **preview** workspace project is an example
-> see [preview](preview/README.md)
+> the **docs** workspace project is an example
+> see [docs](../docs/README.md)
 
 ```ts
 import { Button, Label } from "rua-components/src";

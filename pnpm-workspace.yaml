@@ -1,5 +1,4 @@
 packages:
   - "components"
-  - "preview"
   - "docs"
   - "!**/test/**"

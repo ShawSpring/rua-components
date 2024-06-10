@@ -2,4 +2,4 @@
 
 component library see [components](components/README.md)
 
-preview see [preview](preview/README.md)
+preview see [docs](docs/README.md)

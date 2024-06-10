@@ -22,7 +22,7 @@
     "noUnusedParameters": false,
 
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": { "@components/*": ["../components/*"] }
   },
   "include": ["pages", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]

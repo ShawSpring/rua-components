@@ -14,6 +14,8 @@
   },
   "devDependencies": {
     "@mdx-js/react": "^3.0.0",
+    "@mdx-js/rollup": "^3.0.1",
+    "@shawspring/vite-pages-theme-doc": "^0.0.9",
     "rimraf": "^5.0.5",
     "serve": "^14.2.3",
     "vite-pages-theme-doc": "^5.0.0",

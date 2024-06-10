@@ -1,10 +1,30 @@
-import React from "react";
-import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
+import React, { useMemo } from "react";
+import { createTheme, defaultSideNavs } from "@shawspring/vite-pages-theme-doc";
 
 import Component404 from "./404";
+import ThemeItem from "./selfComps/ThemeItem";
+import { Navigate } from "react-router-dom";
+
+function setTheme({ key }: { key: string }) {
+  document.body.setAttribute("data-theme", key);
+  localStorage.setItem("data-theme", key);
+}
+document.body.setAttribute(
+  "data-theme",
+  localStorage.getItem("data-theme") || "light",
+);
 
 export default createTheme({
-  logo: <div style={{ fontSize: "20px" }}>📘 Vite Pages</div>,
+  logo: (
+    <div
+      style={{ fontSize: "20px" }}
+      onClick={() => {
+        Navigate({ to: "/" });
+      }}
+    >
+      📘 Rua components
+    </div>
+  ),
   topNavs: [
     {
       label: "Index",
@@ -24,6 +44,22 @@ export default createTheme({
     {
       label: "Vite Pages",
       href: "https://github.com/vitejs/vite-plugin-react-pages",
+    },
+    {
+      subMenu: "Theme",
+      icon: "🎨",
+      children: [
+        {
+          key: "light",
+          element: <ThemeItem theme="light" />,
+          onclick: setTheme,
+        },
+        {
+          key: "dark",
+          element: <ThemeItem theme="dark" />,
+          onclick: setTheme,
+        },
+      ],
     },
   ],
   sideNavs: (ctx) => {

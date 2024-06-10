@@ -15,6 +15,9 @@
     "./src": {
       "import": "./src/index.ts"
     },
+    "./src/*": {
+      "import": "./src/*"
+    },
     "./plugin": {
       "default": "./src/utils/ruaPlugin.js"
     }
@@ -45,9 +48,5 @@
     "node": ">=16.x",
     "pnpm": ">=8.x"
   },
-  "browserslist": [
-    ">1%",
-    "not IE 11"
-  ],
   "dependencies": {}
 }
