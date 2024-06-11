@@ -7,6 +7,8 @@ a react component library, created on top of [react-aria-components](https://rea
 1. 🌓multiple themes (32) inspired by [daisyUI](https://daisyui.com/docs/themes/)
 2. 😋support tree shaking
 
+<Demo src="./src/Button/demos/variants.tsx" />
+
 ## install
 
 ```bash
@@ -37,52 +39,6 @@ import { Button, Label } from "rua-components";
 
 ```ts
 import { Button, Label } from "rua-components/src";
-```
-
-## Themes
-
-```ts
-type Theme =
-  | "light"
-  | "dark"
-  | "system"
-  | "corporate"
-  | "cupcake"
-  | "bumblebee"
-  | "wireframe"
-  | "halloween"
-  | "black"
-  | "luxury"
-  | "valentine"
-  | "emerald"
-  | "dracula"
-  | "cmyk"
-  | "cyberpunk"
-  | "retro"
-  | "garden"
-  | "aqua"
-  | "pastel"
-  | "fantasy"
-  | "lofi"
-  | "forest"
-  | "autumn"
-  | "synthwave"
-  | "business"
-  | "acid"
-  | "lemonade"
-  | "night"
-  | "coffee"
-  | "winter"
-  | "dim"
-  | "nord"
-  | "sunset";
-```
-
-color tokens are defined with css variables, see `src/styles/themes.css`
-set attribute `data-theme` in html or body element,for expample：
-
-```html
-<body data-theme="<your-theme-name>"></body>
 ```
 
 ## Notes to attention

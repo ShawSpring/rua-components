@@ -10,7 +10,7 @@ li[role="menuitem"] {
 }
 
 @layer components {
-  .theme-item {
+  /* .theme-item {
     @apply size-full border ring-1 bg-base-100 text-base-c rounded-btn text-center;
-  }
+  } */
 }

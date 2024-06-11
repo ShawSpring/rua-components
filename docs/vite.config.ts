@@ -2,19 +2,52 @@ import { defineConfig } from "vite";
 import * as path from "path";
 import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
-import nodeResolve from "@rollup/plugin-node-resolve";
+
+const deps = {
+  "react-aria-vendor": ["react-aria-components", "react-aria"],
+  "rua-componets": ["rua-components"],
+  "react-vendor": [
+    "react",
+    "react-dom",
+    "react/jsx-runtime",
+    "react-router-dom",
+    "react-dom/client",
+  ],
+};
 
 // https://vitejs.dev/config/
 export default defineConfig({
   root: path.resolve(__dirname, "./"),
-  build: {},
+  esbuild: {
+    drop: ["console", "debugger"],
+    legalComments: "none",
+  },
+  build: {
+    rollupOptions: {
+      treeshake: true,
+      output: {
+        // 先console.log看看 打包的文件id 都有哪些
+        manualChunks: {
+          "react-aria-vendor": ["react-aria-components", "react-aria"],
+          "rua-componets": ["rua-components"],
+          "react-vendor": [
+            "react",
+            "react-dom",
+            "react/jsx-runtime",
+            "react-router-dom",
+            "react-dom/client",
+          ],
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     pages({
       pagesDir: path.join(__dirname, "pages"),
       pageStrategy: new DefaultPageStrategy({
         extraFindPages: async (pagesDir, helpers) => {
-          const srcPath = path.join(__dirname, "../components/src");
+          const srcPath = path.join(__dirname, "./src");
           if (String(process.env.SHOW_ALL_COMPONENT_DEMOS) === "true") {
             // show all component demos during dev
             // put them in page `/components/demos/${componentName}`
@@ -79,7 +112,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@components": path.resolve(__dirname, "../components"),
+      //  引用外部项目，会将外部项目也打包，别这么干
+      // "@components": path.resolve(__dirname, "../components"),
     },
   },
   ssr: {

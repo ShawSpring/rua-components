@@ -13,6 +13,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "removeComments": true,
+    "esModuleInterop": true,
 
     /* Linting */
     "strict": true,
@@ -21,8 +23,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
 
-    "baseUrl": ".",
-    "paths": { "@components/*": ["../components/*"] }
+    "baseUrl": "."
   },
   "include": ["pages", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]

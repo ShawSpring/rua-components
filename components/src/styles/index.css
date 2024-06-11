@@ -11,7 +11,9 @@
       font-size: 18px;
     }
 
-body {
-  @apply bg-base-100 text-base-c;
-  color-scheme: light dark;
+    body {
+      @apply bg-base-100 text-base-c;
+      color-scheme: light dark;
+    }
+  }
 }
